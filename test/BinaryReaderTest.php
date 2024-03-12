@@ -148,6 +148,24 @@ class BinaryReaderTest extends AbstractTestCase
     }
 
     /**
+     * @param \PhpBinaryReader\BinaryReader $brBig
+     * @param \PhpBinaryReader\BinaryReader $brLittle
+     *
+     * @dataProvider binaryReaders
+     */
+    public function testDouble(BinaryReader $brBig, BinaryReader $brLittle)
+    {
+        $brBig->setPosition(16);
+        $brLittle->setPosition(16);
+
+        $this->assertEquals(1.0, $brBig->readDouble());
+        $this->assertEquals(1.0, $brLittle->readDouble());
+
+        $this->assertEquals(-1.0, $brBig->readDouble());
+        $this->assertEquals(-1.0, $brLittle->readDouble());
+    }
+
+    /**
      * @dataProvider binaryReaders
      */
     public function testAlign($brBig, $brLittle)
@@ -340,5 +358,6 @@ class BinaryReaderTest extends AbstractTestCase
         $this->assertInstanceOf('\PhpBinaryReader\Type\Int8', $brBig->getInt8Reader());
         $this->assertInstanceOf('\PhpBinaryReader\Type\Str', $brBig->getStringReader());
         $this->assertInstanceOf('\PhpBinaryReader\Type\Single', $brBig->getSingleReader());
+        $this->assertInstanceOf('\PhpBinaryReader\Type\Double', $brBig->getDoubleReader());
     }
 }

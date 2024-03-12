@@ -5,6 +5,7 @@ namespace PhpBinaryReader;
 use PhpBinaryReader\Exception\InvalidDataException;
 use PhpBinaryReader\Type\Bit;
 use PhpBinaryReader\Type\Byte;
+use PhpBinaryReader\Type\Double;
 use PhpBinaryReader\Type\Int8;
 use PhpBinaryReader\Type\Int16;
 use PhpBinaryReader\Type\Int32;
@@ -90,6 +91,11 @@ class BinaryReader
     private $singleReader;
 
     /**
+     * @var \PhpBinaryReader\Type\Double
+     */
+    private $doubleReader;
+
+    /**
      * @param  string|resource           $input
      * @param  int|string                $endian
      * @throws \InvalidArgumentException
@@ -117,6 +123,7 @@ class BinaryReader
         $this->int32Reader = new Int32();
         $this->int64Reader = new Int64();
         $this->singleReader = new Single();
+        $this->doubleReader = new Double();
     }
 
     /**
@@ -242,6 +249,11 @@ class BinaryReader
     public function readSingle()
     {
         return $this->singleReader->read($this);
+    }
+
+    public function readDouble()
+    {
+        return $this->doubleReader->read($this);
     }
 
     /**
@@ -472,6 +484,14 @@ class BinaryReader
     public function getSingleReader()
     {
         return $this->singleReader;
+    }
+
+    /**
+     * @return \PhpBinaryReader\Type\Double
+     */
+    public function getDoubleReader()
+    {
+        return $this->doubleReader;
     }
 
     /**
