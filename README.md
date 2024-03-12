@@ -63,6 +63,8 @@ Methods
 
 **readSingle()** returns a 4-bytes floating-point
 
+**readDouble()** returns a 8-bytes signed double
+
 **readUBits($length)** returns a variable length of bits (unsigned)
 
 **readBits($length)** returns a variable length of bits (signed)
