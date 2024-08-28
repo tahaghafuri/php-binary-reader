@@ -1,5 +1,11 @@
 PhpBinaryReader
 ===
+Add These Codes Before Use Class:
+```php
+use PhpBinaryReader\BinaryReader;
+use PhpBinaryReader\Endian;
+...
+```
 
 Why?
 ---
