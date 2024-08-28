@@ -1,8 +1,5 @@
 PhpBinaryReader
 ===
-[![Build Status](https://travis-ci.org/mdurrant/php-binary-reader.svg)](https://travis-ci.org/mdurrant/php-binary-reader)
-[![Code Coverage](https://scrutinizer-ci.com/g/mdurrant/php-binary-reader/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mdurrant/php-binary-reader/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mdurrant/php-binary-reader/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mdurrant/php-binary-reader/?branch=master)
 
 Why?
 ---
